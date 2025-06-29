@@ -1,0 +1,143 @@
+<header class="header">
+    <div class="header-container">
+        <a href="/" class="logo">Towards AI</a>
+        
+        <nav class="desktop-nav">
+            <ul class="nav">
+                <li><a href="/" {% if page.url == "/" %}class="active"{% endif %}>Home</a></li>
+                <li><a href="/about/" {% if page.url == "/about/" %}class="active"{% endif %}>About</a></li>
+                <li><a href="/contact/" {% if page.url == "/contact/" %}class="active"{% endif %}>Contact</a></li>
+            </ul>
+        </nav>
+        
+        <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 12h18M3 6h18M3 18h18"/>
+            </svg>
+        </button>
+    </div>
+</header>
+
+<style>
+.header {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--glass-border);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-family: var(--font-accent);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    text-decoration: none;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.desktop-nav {
+    display: flex;
+}
+
+.nav {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 2rem;
+}
+
+.nav a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+    position: relative;
+}
+
+.nav a:hover,
+.nav a.active {
+    color: var(--accent-primary);
+}
+
+.nav a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -0.5rem;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--accent-primary);
+}
+
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .desktop-nav {
+        display: none;
+    }
+    
+    .mobile-menu-toggle {
+        display: block;
+    }
+    
+    .nav {
+        position: fixed;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--bg-primary);
+        border-top: 1px solid var(--glass-border);
+        padding: 2rem;
+        transform: translateY(-100%);
+        transition: var(--transition);
+        opacity: 0;
+        visibility: hidden;
+        z-index: 999;
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    .nav.nav-open {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .nav li {
+        margin-bottom: 1rem;
+    }
+    
+    .nav a {
+        font-size: 1.2rem;
+        display: block;
+        padding: 0.5rem 0;
+    }
+    
+    .mobile-menu-toggle.active svg {
+        transform: rotate(90deg);
+    }
+}
+</style>

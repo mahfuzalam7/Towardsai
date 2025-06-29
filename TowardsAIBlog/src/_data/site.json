@@ -1,0 +1,17 @@
+{
+  "title": "Towards AI",
+  "description": "Cutting-edge insights into artificial intelligence, machine learning, and the future of technology. Expert analysis, tutorials, and industry perspectives.",
+  "url": "https://towardsai.net",
+  "author": "Towards AI Team",
+  "newsletter_provider": "convertkit",
+  "newsletter_api_key": "",
+  "ad_network": "carbon-ads",
+  "ad_publisher_id": "",
+  "google_analytics": "",
+  "social": {
+    "twitter": "towardsai",
+    "linkedin": "company/towards-ai",
+    "github": "towardsai-net"
+  },
+  "buildTime": "2025-01-01"
+}

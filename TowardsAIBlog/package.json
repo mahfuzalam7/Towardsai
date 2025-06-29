@@ -1,0 +1,27 @@
+{
+  "name": "workspace",
+  "version": "1.0.0",
+  "description": "A production-ready, fully responsive blog website built with Eleventy (11ty) featuring a sleek, futuristic dark mode design with glassmorphic UI elements. Designed for monetization with built-in ad zones, newsletter integration, and affiliate link support.",
+  "main": ".eleventy.js",
+  "scripts": {
+    "build": "npx @11ty/eleventy",
+    "start": "npx @11ty/eleventy --serve --port=5000",
+    "dev": "npx @11ty/eleventy --serve --port=5000 --watch",
+    "clean": "rm -rf _site",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@11ty/eleventy": "^3.1.2",
+    "body-parser": "^2.2.0",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "luxon": "^3.6.1",
+    "markdown-it": "^14.1.0",
+    "markdown-it-anchor": "^9.2.0",
+    "markdown-it-prism": "^3.0.0",
+    "mongodb": "^6.17.0"
+  }
+}

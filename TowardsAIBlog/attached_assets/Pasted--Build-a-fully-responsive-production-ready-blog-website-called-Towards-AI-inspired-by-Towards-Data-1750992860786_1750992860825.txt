@@ -1,0 +1,104 @@
+"Build a fully responsive, production-ready blog website called Towards AI, inspired by Towards Data Science, with a sleek, futuristic dark mode design. The site should feature a minimalist or glassmorphic user interface, smooth transitions, and excellent readability across all devices. Use modern fonts like Inter, IBM Plex Sans, or Space Grotesk. The project must be easily deployable on Netlify and include a secure admin panel powered by Netlify CMS for content management."
+
+✅ Core Features
+Homepage
+
+Card-style blog previews with title, date, excerpt, tags, and author avatar
+
+Mobile-first responsive grid layout:
+
+1 column on phones
+
+2 columns on tablets
+
+3+ columns on large screens
+
+Smooth hover animations and subtle transitions
+
+Blog Post Page
+
+Includes reading time, tags, responsive images, code block support, and social share buttons (Twitter, LinkedIn)
+
+Author Profile Pages
+
+Display avatar, bio, and a list of authored posts
+
+About Page
+
+Includes project mission and editorial philosophy
+
+Contact Page
+
+Clean, stylized form layout (non-functional or placeholder)
+
+Sticky Navigation Bar
+
+Smooth scroll behavior and dropdown menu support if needed
+
+SEO Essentials
+
+Meta tags, Open Graph, Twitter Cards, sitemap.xml, RSS feed
+
+Dark Mode Design
+
+Optimized for modern screens and touch devices
+
+No Sponsor or Newsletter Sections
+
+🛠️ Admin Panel (via Netlify CMS)
+Accessible at /admin/
+
+Protected login via Netlify Identity
+
+GitHub-based authentication and content sync
+
+Posts and author bios editable via a clean UI
+
+Configuration via admin/config.yml
+
+🧱 Tech Stack
+Eleventy (11ty) for static site generation
+
+Nunjucks templating
+
+Google Fonts for typography
+
+Modern CSS Grid/Flexbox for layout
+
+Minimal JavaScript (for filtering, UI polish only)
+
+Netlify CMS for admin panel
+
+GitHub + Netlify for deployment and content hosting
+
+📁 Folder Structure Example
+.
+├── .replit
+├── package.json
+├── .eleventy.js
+├── assets/
+│   └── style.css
+├── admin/
+│   ├── index.html
+│   └── config.yml
+└── src/
+    ├── _data/
+    │   └── authors.json
+    ├── authors/
+    │   └── username.md
+    ├── posts/
+    │   └── sample-post.md
+    ├── layouts/
+    │   ├── base.njk
+    │   ├── post.njk
+    │   ├── author.njk
+    │   └── page.njk
+    ├── index.njk
+    ├── about.njk
+    └── contact.njk
+📦 Sample Content
+3 blog posts with different layouts (code, longform, opinion)
+
+2 author profiles with avatars and bios
+
+Placeholder favicon/logo in layout head

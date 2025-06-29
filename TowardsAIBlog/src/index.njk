@@ -1,0 +1,19 @@
+---
+layout: layouts/base.njk
+title: Home
+---
+
+<section class="hero">
+    <h1>Towards AI</h1>
+    <p>Discover the latest insights, breakthroughs, and expert perspectives on artificial intelligence, machine learning, and the future of technology.</p>
+</section>
+
+<section class="featured-posts">
+    <div class="posts-grid">
+        {% for post in collections.posts | limit(9) %}
+            {% include "components/post-card.njk" %}
+        {% endfor %}
+    </div>
+</section>
+
+

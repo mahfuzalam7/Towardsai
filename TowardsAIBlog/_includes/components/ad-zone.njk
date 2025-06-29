@@ -1,0 +1,86 @@
+{% set adZone = zone or "general" %}
+
+<div class="ad-zone {{ adZone }}-ad" data-ad-zone="{{ adZone }}">
+    {% if site.ad_network == "google-adsense" and site.ad_publisher_id %}
+        <!-- Google AdSense -->
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ site.ad_publisher_id }}"
+                crossorigin="anonymous"></script>
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="{{ site.ad_publisher_id }}"
+             data-ad-slot="AUTO"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    {% elif site.ad_network == "carbon-ads" %}
+        <!-- Carbon Ads -->
+        <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve={{ site.ad_publisher_id }}&placement={{ adZone }}" id="_carbonads_js"></script>
+    {% elif site.ad_network == "media-net" %}
+        <!-- Media.net -->
+        <div id="ad-{{ adZone }}">
+            <!-- Media.net ad code would go here -->
+        </div>
+    {% else %}
+        <!-- Placeholder for ad network -->
+        <div class="ad-placeholder">
+            <p>Advertisement</p>
+            <small>{{ adZone | title }} Ad Zone</small>
+        </div>
+    {% endif %}
+</div>
+
+<style>
+.ad-placeholder {
+    background: var(--glass-bg);
+    border: 2px dashed var(--glass-border);
+    padding: 2rem;
+    text-align: center;
+    color: var(--text-muted);
+    font-family: var(--font-accent);
+    border-radius: var(--border-radius);
+}
+
+.ad-placeholder p {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.1rem;
+}
+
+.ad-placeholder small {
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+/* Carbon Ads Styling */
+#carbonads {
+    font-family: var(--font-primary);
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--border-radius);
+    padding: 1rem;
+    text-align: center;
+}
+
+#carbonads a {
+    color: var(--text-primary);
+    text-decoration: none;
+}
+
+#carbonads a:hover {
+    color: var(--accent-primary);
+}
+
+.carbon-text {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+}
+
+.carbon-poweredby {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+</style>

@@ -1,0 +1,44 @@
+---
+permalink: /feed.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>{{ site.title }}</title>
+        <description>{{ site.description }}</description>
+        <link>{{ site.url }}/</link>
+        <atom:link href="{{ site.url }}/feed.xml" rel="self" type="application/rss+xml"/>
+        <language>en-US</language>
+        <lastBuildDate>{{ collections.posts[0].date | rssDate }}</lastBuildDate>
+        <copyright>Copyright {{ site.buildTime | date("YYYY") }} {{ site.title }}</copyright>
+        <managingEditor>{{ site.author }}</managingEditor>
+        <webMaster>{{ site.author }}</webMaster>
+        <ttl>60</ttl>
+        <image>
+            <url>{{ site.url }}/favicon.png</url>
+            <title>{{ site.title }}</title>
+            <link>{{ site.url }}/</link>
+            <width>144</width>
+            <height>144</height>
+        </image>
+        
+        {% for post in collections.posts | limit(10) %}
+        <item>
+            <title><![CDATA[{{ post.data.title }}]]></title>
+            <description><![CDATA[{{ post.data.excerpt or (post.templateContent | excerpt) }}]]></description>
+            <content:encoded><![CDATA[{{ post.templateContent | safe }}]]></content:encoded>
+            <link>{{ site.url }}{{ post.url }}</link>
+            <guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
+            <pubDate>{{ post.date | rssDate }}</pubDate>
+            <author>{{ post.data.author }}</author>
+            {% for tag in post.data.tags %}
+            <category><![CDATA[{{ tag }}]]></category>
+            {% endfor %}
+            {% if post.data.featured_image %}
+            <enclosure url="{{ site.url }}{{ post.data.featured_image }}" type="image/jpeg"/>
+            {% endif %}
+        </item>
+        {% endfor %}
+    </channel>
+</rss>

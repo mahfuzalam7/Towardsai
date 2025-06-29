@@ -1,0 +1,76 @@
+---
+layout: layouts/base.njk
+---
+
+<div class="page-content">
+    <header class="page-header">
+        <h1>{{ title }}</h1>
+    </header>
+    
+    <div class="page-body">
+        {{ content | safe }}
+    </div>
+</div>
+
+<style>
+.page-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.page-header h1 {
+    font-family: var(--font-accent);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.page-body {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+}
+
+.page-body h2,
+.page-body h3,
+.page-body h4 {
+    color: var(--text-primary);
+    font-family: var(--font-accent);
+    margin: 2rem 0 1rem 0;
+}
+
+.page-body h2 {
+    font-size: 1.8rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--glass-border);
+}
+
+.page-body h3 {
+    font-size: 1.4rem;
+}
+
+.page-body p {
+    margin-bottom: 1.5rem;
+}
+
+.page-body a {
+    color: var(--accent-primary);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: var(--transition);
+}
+
+.page-body a:hover {
+    border-bottom-color: var(--accent-primary);
+}
+</style>

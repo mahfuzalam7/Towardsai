@@ -1,0 +1,112 @@
+<svg width="800" height="400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#16213e;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="cnnGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff6b6b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#cc5252;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="vitGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4c9aff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3d7bd9;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="400" fill="url(#bgGradient)"/>
+  
+  <!-- Title -->
+  <text x="400" y="40" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="24" font-weight="bold">Computer Vision Evolution</text>
+  
+  <!-- Timeline -->
+  <line x1="100" y1="350" x2="700" y2="350" stroke="#4c9aff" stroke-width="3"/>
+  
+  <!-- CNN Era -->
+  <g transform="translate(150, 80)">
+    <rect x="0" y="0" width="200" height="180" rx="15" fill="url(#cnnGradient)" filter="url(#glow)"/>
+    <text x="100" y="30" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="16" font-weight="bold">CNNs (2012-2020)</text>
+    
+    <!-- CNN layers visualization -->
+    <rect x="20" y="50" width="30" height="20" fill="#ffffff" opacity="0.8"/>
+    <rect x="60" y="55" width="25" height="15" fill="#ffffff" opacity="0.8"/>
+    <rect x="95" y="60" width="20" height="10" fill="#ffffff" opacity="0.8"/>
+    <rect x="125" y="62" width="15" height="8" fill="#ffffff" opacity="0.8"/>
+    <rect x="150" y="64" width="10" height="6" fill="#ffffff" opacity="0.8"/>
+    
+    <text x="100" y="90" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="12">Convolution</text>
+    <text x="100" y="105" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="12">Pooling</text>
+    <text x="100" y="120" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="12">Feature Maps</text>
+    
+    <!-- Key achievements -->
+    <text x="20" y="145" fill="#ffffff" font-family="Arial, sans-serif" font-size="10">• AlexNet</text>
+    <text x="20" y="160" fill="#ffffff" font-family="Arial, sans-serif" font-size="10">• ResNet</text>
+    <text x="100" y="145" fill="#ffffff" font-family="Arial, sans-serif" font-size="10">• EfficientNet</text>
+    <text x="100" y="160" fill="#ffffff" font-family="Arial, sans-serif" font-size="10">• MobileNet</text>
+  </g>
+  
+  <!-- Vision Transformers Era -->
+  <g transform="translate(450, 80)">
+    <rect x="0" y="0" width="200" height="180" rx="15" fill="url(#vitGradient)" filter="url(#glow)"/>
+    <text x="100" y="30" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="16" font-weight="bold">ViTs (2020+)</text>
+    
+    <!-- Patch visualization -->
+    <g transform="translate(30, 45)">
+      <rect x="0" y="0" width="25" height="25" fill="#ffffff" opacity="0.8" stroke="#333" stroke-width="1"/>
+      <rect x="30" y="0" width="25" height="25" fill="#ffffff" opacity="0.8" stroke="#333" stroke-width="1"/>
+      <rect x="60" y="0" width="25" height="25" fill="#ffffff" opacity="0.8" stroke="#333" stroke-width="1"/>
+      <rect x="90" y="0" width="25" height="25" fill="#ffffff" opacity="0.8" stroke="#333" stroke-width="1"/>
+      <rect x="120" y="0" width="25" height="25" fill="#ffffff" opacity="0.8" stroke="#333" stroke-width="1"/>
+      
+      <rect x="0" y="30" width="25" height="25" fill="#ffffff" opacity="0.8" stroke="#333" stroke-width="1"/>
+      <rect x="30" y="30" width="25" height="25" fill="#ffffff" opacity="0.8" stroke="#333" stroke-width="1"/>
+      <rect x="60" y="30" width="25" height="25" fill="#ffffff" opacity="0.8" stroke="#333" stroke-width="1"/>
+      <rect x="90" y="30" width="25" height="25" fill="#ffffff" opacity="0.8" stroke="#333" stroke-width="1"/>
+      <rect x="120" y="30" width="25" height="25" fill="#ffffff" opacity="0.8" stroke="#333" stroke-width="1"/>
+    </g>
+    
+    <text x="100" y="105" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="12">Patch Embeddings</text>
+    <text x="100" y="120" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="12">Self-Attention</text>
+    
+    <!-- Key achievements -->
+    <text x="20" y="145" fill="#ffffff" font-family="Arial, sans-serif" font-size="10">• ViT</text>
+    <text x="20" y="160" fill="#ffffff" font-family="Arial, sans-serif" font-size="10">• DeiT</text>
+    <text x="100" y="145" fill="#ffffff" font-family="Arial, sans-serif" font-size="10">• Swin</text>
+    <text x="100" y="160" fill="#ffffff" font-family="Arial, sans-serif" font-size="10">• ConvNeXt</text>
+  </g>
+  
+  <!-- Evolution Arrow -->
+  <path d="M 350 170 Q 400 150 450 170" stroke="#51cf66" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#51cf66"/>
+    </marker>
+  </defs>
+  
+  <!-- Timeline markers -->
+  <circle cx="200" cy="350" r="8" fill="#ff6b6b"/>
+  <text x="200" y="375" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="12">2012</text>
+  
+  <circle cx="400" cy="350" r="8" fill="#51cf66"/>
+  <text x="400" y="375" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="12">2016</text>
+  
+  <circle cx="600" cy="350" r="8" fill="#4c9aff"/>
+  <text x="600" y="375" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="12">2020+</text>
+  
+  <!-- Performance indicators -->
+  <text x="100" y="320" fill="#ffffff" font-family="Arial, sans-serif" font-size="12">Accuracy →</text>
+  <text x="700" y="320" fill="#ffffff" font-family="Arial, sans-serif" font-size="12">95%+</text>
+  
+  <!-- Branding -->
+  <text x="750" y="385" text-anchor="end" fill="#666" font-family="Arial, sans-serif" font-size="10">Towards AI</text>
+</svg>

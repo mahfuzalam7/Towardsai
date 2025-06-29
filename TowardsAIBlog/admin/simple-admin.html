@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Towards AI - Simple Admin</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #0a0a0a;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .login-container {
+            background: rgba(18, 18, 18, 0.95);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 2rem;
+            width: 100%;
+            max-width: 400px;
+            backdrop-filter: blur(10px);
+        }
+        .admin-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .admin-header h1 {
+            background: linear-gradient(135deg, #00d4ff 0%, #7c3aed 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 0;
+        }
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #cccccc;
+        }
+        input[type="password"] {
+            width: 100%;
+            padding: 0.75rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
+            color: #ffffff;
+            font-size: 1rem;
+        }
+        input[type="password"]:focus {
+            outline: none;
+            border-color: #00d4ff;
+        }
+        .login-btn {
+            width: 100%;
+            padding: 0.75rem;
+            background: linear-gradient(135deg, #00d4ff 0%, #7c3aed 100%);
+            border: none;
+            border-radius: 6px;
+            color: white;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+        .login-btn:hover {
+            opacity: 0.9;
+        }
+        .error {
+            color: #ff4444;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        .admin-panel {
+            display: none;
+            max-width: 800px;
+            width: 100%;
+        }
+        .file-list {
+            background: rgba(18, 18, 18, 0.95);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-top: 1rem;
+        }
+        .file-item {
+            padding: 0.75rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .file-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container" id="loginContainer">
+        <div class="admin-header">
+            <h1>Towards AI Admin</h1>
+        </div>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="password">Admin Password:</label>
+                <input type="password" id="password" required>
+            </div>
+            <button type="submit" class="login-btn">Login</button>
+            <div id="error" class="error"></div>
+        </form>
+    </div>
+
+    <div class="admin-panel" id="adminPanel">
+        <div class="admin-header">
+            <h1>Towards AI - Content Management</h1>
+        </div>
+        <div class="file-list">
+            <h3>Blog Posts</h3>
+            <div class="file-item" onclick="editFile('src/posts/ai-automation-business.md')">AI Automation in Business</div>
+            <div class="file-item" onclick="editFile('src/posts/computer-vision-breakthrough.md')">Computer Vision Breakthrough</div>
+            <div class="file-item" onclick="editFile('src/posts/deep-learning-transformers.md')">Deep Learning Transformers</div>
+            <div class="file-item" onclick="editFile('src/posts/ethical-ai-development.md')">Ethical AI Development</div>
+            <div class="file-item" onclick="editFile('src/posts/future-of-ai-2025.md')">Future of AI 2025</div>
+            <div class="file-item" onclick="editFile('src/posts/machine-learning-fundamentals.md')">Machine Learning Fundamentals</div>
+            <div class="file-item" onclick="editFile('src/posts/visual-content-monetization.md')">Visual Content Monetization</div>
+        </div>
+        <p style="color: #888; text-align: center; margin-top: 1rem;">
+            Click on a post to edit it in the Replit editor
+        </p>
+    </div>
+
+    <script>
+        const ADMIN_PASSWORD = 'towardsai2025'; // Change this password!
+        
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const password = document.getElementById('password').value;
+            const errorDiv = document.getElementById('error');
+            
+            if (password === ADMIN_PASSWORD) {
+                document.getElementById('loginContainer').style.display = 'none';
+                document.getElementById('adminPanel').style.display = 'block';
+                errorDiv.textContent = '';
+            } else {
+                errorDiv.textContent = 'Invalid password';
+            }
+        });
+
+        function editFile(filePath) {
+            // This would open the file in Replit's editor
+            alert(`Opening ${filePath} for editing.\n\nIn Replit, navigate to the file in the sidebar to edit it.`);
+        }
+    </script>
+</body>
+</html>

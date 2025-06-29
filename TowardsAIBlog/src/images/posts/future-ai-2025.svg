@@ -1,0 +1,161 @@
+<svg width="800" height="400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#16213e;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="futureGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff9f43;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f39c12;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="400" fill="url(#bgGradient)"/>
+  
+  <!-- Title -->
+  <text x="400" y="40" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="24" font-weight="bold">Future of AI in 2025</text>
+  
+  <!-- Central Timeline -->
+  <line x1="100" y1="200" x2="700" y2="200" stroke="#4c9aff" stroke-width="4"/>
+  
+  <!-- 2025 Marker -->
+  <circle cx="400" cy="200" r="15" fill="url(#futureGradient)" filter="url(#glow)"/>
+  <text x="400" y="207" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="12" font-weight="bold">2025</text>
+  
+  <!-- Trend Areas -->
+  <g transform="translate(50, 60)">
+    <!-- Multimodal AI -->
+    <rect x="0" y="0" width="140" height="80" rx="10" fill="#4c9aff" filter="url(#glow)"/>
+    <text x="70" y="25" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Multimodal AI</text>
+    <text x="10" y="45" fill="#ffffff" font-family="Arial, sans-serif" font-size="10">• Text + Vision</text>
+    <text x="10" y="58" fill="#ffffff" font-family="Arial, sans-serif" font-size="10">• Audio Integration</text>
+    <text x="10" y="71" fill="#ffffff" font-family="Arial, sans-serif" font-size="10">• Cross-Modal Learning</text>
+    
+    <!-- Connection line -->
+    <line x1="70" y1="80" x2="350" y2="140" stroke="#4c9aff" stroke-width="2" stroke-dasharray="5,5"/>
+  </g>
+  
+  <g transform="translate(220, 60)">
+    <!-- Edge AI -->
+    <rect x="0" y="0" width="140" height="80" rx="10" fill="#51cf66" filter="url(#glow)"/>
+    <text x="70" y="25" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Edge AI</text>
+    <text x="10" y="45" fill="#ffffff" font-family="Arial, sans-serif" font-size="10">• Local Processing</text>
+    <text x="10" y="58" fill="#ffffff" font-family="Arial, sans-serif" font-size="10">• Real-time Inference</text>
+    <text x="10" y="71" fill="#ffffff" font-family="Arial, sans-serif" font-size="10">• Privacy First</text>
+    
+    <!-- Connection line -->
+    <line x1="70" y1="80" x2="330" y2="140" stroke="#51cf66" stroke-width="2" stroke-dasharray="5,5"/>
+  </g>
+  
+  <g transform="translate(390, 60)">
+    <!-- Autonomous Systems -->
+    <rect x="0" y="0" width="140" height="80" rx="10" fill="#ff9f43" filter="url(#glow)"/>
+    <text x="70" y="20" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Autonomous</text>
+    <text x="70" y="35" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Systems</text>
+    <text x="10" y="55" fill="#ffffff" font-family="Arial, sans-serif" font-size="10">• Self-Driving Cars</text>
+    <text x="10" y="68" fill="#ffffff" font-family="Arial, sans-serif" font-size="10">• Smart Cities</text>
+    
+    <!-- Connection line -->
+    <line x1="70" y1="80" x2="470" y2="140" stroke="#ff9f43" stroke-width="2" stroke-dasharray="5,5"/>
+  </g>
+  
+  <g transform="translate(560, 60)">
+    <!-- AI Agents -->
+    <rect x="0" y="0" width="140" height="80" rx="10" fill="#9c88ff" filter="url(#glow)"/>
+    <text x="70" y="25" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="12" font-weight="bold">AI Agents</text>
+    <text x="10" y="45" fill="#ffffff" font-family="Arial, sans-serif" font-size="10">• Personal Assistants</text>
+    <text x="10" y="58" fill="#ffffff" font-family="Arial, sans-serif" font-size="10">• Task Automation</text>
+    <text x="10" y="71" fill="#ffffff" font-family="Arial, sans-serif" font-size="10">• Decision Making</text>
+    
+    <!-- Connection line -->
+    <line x1="70" y1="80" x2="450" y2="140" stroke="#9c88ff" stroke-width="2" stroke-dasharray="5,5"/>
+  </g>
+  
+  <!-- Future Applications -->
+  <g transform="translate(50, 250)">
+    <text x="350" y="20" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="18" font-weight="bold">2025 AI Applications</text>
+    
+    <!-- Healthcare AI -->
+    <g transform="translate(0, 40)">
+      <rect x="0" y="0" width="120" height="70" rx="10" fill="#ff6b6b" filter="url(#glow)"/>
+      <text x="60" y="20" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Healthcare</text>
+      <text x="10" y="38" fill="#ffffff" font-family="Arial, sans-serif" font-size="9">• AI Diagnosis</text>
+      <text x="10" y="50" fill="#ffffff" font-family="Arial, sans-serif" font-size="9">• Drug Discovery</text>
+      <text x="10" y="62" fill="#ffffff" font-family="Arial, sans-serif" font-size="9">• Personalized Care</text>
+    </g>
+    
+    <!-- Education AI -->
+    <g transform="translate(140, 40)">
+      <rect x="0" y="0" width="120" height="70" rx="10" fill="#4c9aff" filter="url(#glow)"/>
+      <text x="60" y="20" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Education</text>
+      <text x="10" y="38" fill="#ffffff" font-family="Arial, sans-serif" font-size="9">• Adaptive Learning</text>
+      <text x="10" y="50" fill="#ffffff" font-family="Arial, sans-serif" font-size="9">• AI Tutors</text>
+      <text x="10" y="62" fill="#ffffff" font-family="Arial, sans-serif" font-size="9">• Skills Assessment</text>
+    </g>
+    
+    <!-- Finance AI -->
+    <g transform="translate(280, 40)">
+      <rect x="0" y="0" width="120" height="70" rx="10" fill="#51cf66" filter="url(#glow)"/>
+      <text x="60" y="20" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Finance</text>
+      <text x="10" y="38" fill="#ffffff" font-family="Arial, sans-serif" font-size="9">• Algorithmic Trading</text>
+      <text x="10" y="50" fill="#ffffff" font-family="Arial, sans-serif" font-size="9">• Risk Management</text>
+      <text x="10" y="62" fill="#ffffff" font-family="Arial, sans-serif" font-size="9">• Fraud Prevention</text>
+    </g>
+    
+    <!-- Entertainment AI -->
+    <g transform="translate(420, 40)">
+      <rect x="0" y="0" width="120" height="70" rx="10" fill="#ff9f43" filter="url(#glow)"/>
+      <text x="60" y="20" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Entertainment</text>
+      <text x="10" y="38" fill="#ffffff" font-family="Arial, sans-serif" font-size="9">• Content Creation</text>
+      <text x="10" y="50" fill="#ffffff" font-family="Arial, sans-serif" font-size="9">• Virtual Actors</text>
+      <text x="10" y="62" fill="#ffffff" font-family="Arial, sans-serif" font-size="9">• Game AI</text>
+    </g>
+    
+    <!-- Climate AI -->
+    <g transform="translate(560, 40)">
+      <rect x="0" y="0" width="120" height="70" rx="10" fill="#9c88ff" filter="url(#glow)"/>
+      <text x="60" y="20" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Climate</text>
+      <text x="10" y="38" fill="#ffffff" font-family="Arial, sans-serif" font-size="9">• Weather Prediction</text>
+      <text x="10" y="50" fill="#ffffff" font-family="Arial, sans-serif" font-size="9">• Energy Optimization</text>
+      <text x="10" y="62" fill="#ffffff" font-family="Arial, sans-serif" font-size="9">• Carbon Tracking</text>
+    </g>
+  </g>
+  
+  <!-- Innovation Indicators -->
+  <g transform="translate(650, 240)">
+    <text x="75" y="0" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Key Metrics</text>
+    
+    <!-- AI Investment -->
+    <text x="0" y="25" fill="#51cf66" font-family="Arial, sans-serif" font-size="12" font-weight="bold">$500B+</text>
+    <text x="0" y="40" fill="#ffffff" font-family="Arial, sans-serif" font-size="10">AI Investment</text>
+    
+    <!-- Model Parameters -->
+    <text x="0" y="60" fill="#4c9aff" font-family="Arial, sans-serif" font-size="12" font-weight="bold">100T+</text>
+    <text x="0" y="75" fill="#ffffff" font-family="Arial, sans-serif" font-size="10">Model Parameters</text>
+    
+    <!-- Applications -->
+    <text x="0" y="95" fill="#ff9f43" font-family="Arial, sans-serif" font-size="12" font-weight="bold">1M+</text>
+    <text x="0" y="110" fill="#ffffff" font-family="Arial, sans-serif" font-size="10">AI Applications</text>
+  </g>
+  
+  <!-- Progress arrow -->
+  <path d="M 100 200 L 700 200" stroke="#4c9aff" stroke-width="3" marker-end="url(#arrow)"/>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#4c9aff"/>
+    </marker>
+  </defs>
+  
+  <!-- Branding -->
+  <text x="750" y="385" text-anchor="end" fill="#666" font-family="Arial, sans-serif" font-size="10">Towards AI</text>
+</svg>

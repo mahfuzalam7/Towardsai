@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% if title %}{{ title }} | {% endif %}{{ site.title }}</title>
+    <meta name="description" content="{% if seo_description %}{{ seo_description }}{% elif excerpt %}{{ excerpt }}{% else %}{{ site.description }}{% endif %}">
+    <meta name="author" content="{% if author %}{{ author }}{% else %}{{ site.author }}{% endif %}">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="{% if title %}{{ title }}{% else %}{{ site.title }}{% endif %}">
+    <meta property="og:description" content="{% if seo_description %}{{ seo_description }}{% elif excerpt %}{{ excerpt }}{% else %}{{ site.description }}{% endif %}">
+    <meta property="og:type" content="{% if tags %}article{% else %}website{% endif %}">
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+    <meta property="og:site_name" content="{{ site.title }}">
+    {% if featured_image %}
+    <meta property="og:image" content="{{ site.url }}{{ featured_image }}">
+    {% endif %}
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@{{ site.social.twitter }}">
+    <meta name="twitter:creator" content="@{{ site.social.twitter }}">
+    <meta name="twitter:title" content="{% if title %}{{ title }}{% else %}{{ site.title }}{% endif %}">
+    <meta name="twitter:description" content="{% if seo_description %}{{ seo_description }}{% elif excerpt %}{{ excerpt }}{% else %}{{ site.description }}{% endif %}">
+    {% if featured_image %}
+    <meta name="twitter:image" content="{{ site.url }}{{ featured_image }}">
+    {% endif %}
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+
+    <!-- RSS Feed -->
+    <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.url }}/feed.xml">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/assets/style.css">
+
+    <!-- Google Analytics -->
+    {% if site.google_analytics %}
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '{{ site.google_analytics }}');
+    </script>
+    {% endif %}
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "{% if tags %}BlogPosting{% else %}WebSite{% endif %}",
+        "headline": "{% if title %}{{ title }}{% else %}{{ site.title }}{% endif %}",
+        "description": "{% if seo_description %}{{ seo_description }}{% elif excerpt %}{{ excerpt }}{% else %}{{ site.description }}{% endif %}",
+        "url": "{{ site.url }}{{ page.url }}",
+        {% if tags %}
+        "datePublished": "{{ date | htmlDateString }}",
+        "dateModified": "{{ date | htmlDateString }}",
+        "author": {
+            "@type": "Person",
+            "name": "{{ author }}"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "{{ site.title }}",
+            "url": "{{ site.url }}"
+        },
+        {% endif %}
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "{{ site.url }}{{ page.url }}"
+        }
+    }
+    </script>
+</head>
+<body>
+    {% include "components/header.njk" %}
+
+    <!-- Header Ad Zone -->
+    {% if site.ad_network != "none" %}
+        {% set zone = "header" %}
+        {% include "components/ad-zone.njk" %}
+    {% endif %}
+
+    <main class="main">
+        {{ content | safe }}
+    </main>
+
+    {% include "components/footer.njk" %}
+
+    <!-- Footer Ad Zone -->
+    {% if site.ad_network != "none" %}
+        {% set zone = "footer" %}
+        {% include "components/ad-zone.njk" %}
+    {% endif %}
+
+    <script src="/assets/script.js"></script>
+
+    <!-- Netlify Identity -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script>
+        if (window.netlifyIdentity) {
+            window.netlifyIdentity.on("init", user => {
+                if (!user) {
+                    window.netlifyIdentity.on("login", () => {
+                        document.location.href = "/admin/";
+                    });
+                }
+            });
+        }
+    </script>
+</body>
+</html>
